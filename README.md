@@ -5,9 +5,9 @@ It is ideal for testing devices, lab experiments, automation demos, and industri
 
 A dedicated Modbus TCP server for Arduino Opta is also available and was used to test the dashboard, making this project a complete Modbus testing environment (client + embedded server).
 
-🚀 Features
+🚀 **Features**
 
-🔧 Dynamic Modbus Server Configuration
+🔧 **Dynamic Modbus Server Configuration**
 - Dashboard text input to set the Modbus TCP server IP.
 - A Function node generates the configuration object:
   - tcpHost
@@ -15,34 +15,34 @@ A dedicated Modbus TCP server for Arduino Opta is also available and was used to
   - unitId
 - A modbus-flex-connector applies the configuration without restarting the flow.
 
-🟢 Coil Write (0x)
+🟢 **Coil Write**
 - A dashboard ui_switch toggles Coil 0.
 - Uses a modbus-write node to send boolean values.
 
-🔴 Coil Read (0x)
+🔴 **Coil Read**
 - Periodic read (every 1 second) using modbus-read.
 - Extracts payload[0] and displays it via a colored LED indicator.
 
-🟡 Discrete Input Read (1x)
+🟡 **Discrete Input Read**
 - Reads a discrete input from address 0.
 - Displays the state in real time through a LED widget.
 
-🔵 Holding Register Write (4x)
+🔵 **Holding Register Write**
 - Dashboard numeric input (0–100).
 - Writes the value to Holding Register 20.
 
-🔵 Holding Register Read (4x)
+🔵 **Holding Register Read**
 - Reads the same Holding Register every second.
 - Real-time gauge visualization on the dashboard.
 
-🟣 Input Register Read (3x)
+🟣 **Input Register Read**
 - Reads Input Register 30.
 - Shows the value on a dashboard gauge.
 
-🧪 Optional Modbus Server Simulator
+🧪 **Optional Modbus Server Simulator**
 The flow includes a disabled Modbus Server node that can act as a local simulator for testing without physical hardware.
 
-🔌 Arduino Opta as Modbus TCP Server
+🔌 **Arduino Opta as Modbus TCP Server**
 
 This dashboard can be tested using a custom Modbus TCP server implementation running on Arduino Opta.
 The Opta exposes coils and registers mapped exactly for this client flow, allowing you to:
@@ -54,7 +54,7 @@ The Opta exposes coils and registers mapped exactly for this client flow, allowi
 This makes the project a complete setup:
 Node-RED Modbus Client ↔ Arduino Opta Modbus Server
 
-🖥️ Dashboard Layout
+🖥️ **Dashboard Layout**
 
 The UI is organized into the following groups:
 - Coil Test
@@ -67,7 +67,7 @@ The UI is organized into the following groups:
 
 Each group provides intuitive controls such as switches, numeric inputs, LED indicators, and gauges.
 
-▶️ How to Use
+▶️ **How to Use**
 
 1. Import Modbus_TCP_Client_Panel.json into Node-RED.
 2. Open the dashboard (typically at http://localhost:1880/ui).

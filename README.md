@@ -5,6 +5,7 @@ The flow provides an interactive dashboard capable of reading and writing Modbus
 It is ideal for testing devices, lab experiments, automation demos, and industrial prototyping.
 
 🚀 Features
+
 🔧 Dynamic Modbus Server Configuration
 - Dashboard text input to set the Modbus TCP server IP.
 - A Function node generates the configuration object:
@@ -48,6 +49,8 @@ The UI is organized into the following groups:
 - Holding Register Test
 - Input Register Test
 - Configuration
+
+<img width="1418" height="660" alt="image" src="https://github.com/user-attachments/assets/d59b9648-56d4-4576-b0df-aed6f2dea267" />
 
 Each group provides intuitive controls such as switches, numeric inputs, LED indicators, and gauges.
 

@@ -1,0 +1,696 @@
+[
+    {
+        "id": "2ffed68a136fdf8b",
+        "type": "tab",
+        "label": "Modbus Client",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "24b589dd3601480a",
+        "type": "modbus-write",
+        "z": "2ffed68a136fdf8b",
+        "name": "CoilWrite",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "1",
+        "server": "c67705d38fddf91e",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 360,
+        "y": 60,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "9c5e9f7cb6ab845b",
+        "type": "ui_switch",
+        "z": "2ffed68a136fdf8b",
+        "name": "",
+        "label": "Coil Write",
+        "tooltip": "",
+        "group": "1a70e982ecbca912",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 120,
+        "y": 60,
+        "wires": [
+            [
+                "24b589dd3601480a"
+            ]
+        ]
+    },
+    {
+        "id": "347d90983c2e903c",
+        "type": "modbus-write",
+        "z": "2ffed68a136fdf8b",
+        "name": "HoldingRegWrite",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "HoldingRegister",
+        "adr": "20",
+        "quantity": "1",
+        "server": "c67705d38fddf91e",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 370,
+        "y": 340,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "7b1f4e27a48e2ae3",
+        "type": "ui_numeric",
+        "z": "2ffed68a136fdf8b",
+        "name": "",
+        "label": "HoldingRegister Write",
+        "tooltip": "",
+        "group": "d11924b3f0bb0624",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 120,
+        "y": 340,
+        "wires": [
+            [
+                "347d90983c2e903c"
+            ]
+        ]
+    },
+    {
+        "id": "10c17041207eb032",
+        "type": "modbus-read",
+        "z": "2ffed68a136fdf8b",
+        "name": "",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Input",
+        "adr": "10",
+        "quantity": "1",
+        "rate": "100",
+        "rateUnit": "ms",
+        "delayOnStart": false,
+        "enableDeformedMessages": false,
+        "startDelayTime": "",
+        "server": "c67705d38fddf91e",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 110,
+        "y": 240,
+        "wires": [
+            [
+                "ccba3cb9fafeafdc"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "5fb2aaf99d5c0140",
+        "type": "ui_led",
+        "z": "2ffed68a136fdf8b",
+        "order": 1,
+        "group": "01448598ec2b4042",
+        "width": 0,
+        "height": 0,
+        "label": "DiscreteInput Read",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "DiscreteInput Read",
+        "x": 510,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "11bf4acfb24c5b5e",
+        "type": "modbus-server",
+        "z": "2ffed68a136fdf8b",
+        "d": true,
+        "name": "Server Simulator",
+        "logEnabled": false,
+        "hostname": "0.0.0.0",
+        "serverPort": "502",
+        "responseDelay": 100,
+        "delayUnit": "ms",
+        "coilsBufferSize": 10000,
+        "holdingBufferSize": 10000,
+        "inputBufferSize": 10000,
+        "discreteBufferSize": 10000,
+        "showErrors": false,
+        "showStatusActivities": false,
+        "x": 850,
+        "y": 100,
+        "wires": [
+            [],
+            [],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "ccba3cb9fafeafdc",
+        "type": "change",
+        "z": "2ffed68a136fdf8b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 240,
+        "wires": [
+            [
+                "5fb2aaf99d5c0140"
+            ]
+        ]
+    },
+    {
+        "id": "b740b0c9737edbc8",
+        "type": "modbus-read",
+        "z": "2ffed68a136fdf8b",
+        "name": "",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "1",
+        "rate": "100",
+        "rateUnit": "ms",
+        "delayOnStart": false,
+        "enableDeformedMessages": false,
+        "startDelayTime": "",
+        "server": "c67705d38fddf91e",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "57ee546728a2e557"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1f68ef6b1df75b37",
+        "type": "ui_led",
+        "z": "2ffed68a136fdf8b",
+        "order": 2,
+        "group": "1a70e982ecbca912",
+        "width": 0,
+        "height": 0,
+        "label": "Coil Read",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "DiscreteInput Test",
+        "x": 510,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "57ee546728a2e557",
+        "type": "change",
+        "z": "2ffed68a136fdf8b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 120,
+        "wires": [
+            [
+                "1f68ef6b1df75b37"
+            ]
+        ]
+    },
+    {
+        "id": "dc8331e20757fdd0",
+        "type": "modbus-read",
+        "z": "2ffed68a136fdf8b",
+        "name": "",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "HoldingRegister",
+        "adr": "20",
+        "quantity": "1",
+        "rate": "100",
+        "rateUnit": "ms",
+        "delayOnStart": false,
+        "enableDeformedMessages": false,
+        "startDelayTime": "",
+        "server": "c67705d38fddf91e",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 110,
+        "y": 400,
+        "wires": [
+            [
+                "84999518df732282"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "84999518df732282",
+        "type": "change",
+        "z": "2ffed68a136fdf8b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 400,
+        "wires": [
+            [
+                "67bc6ac5e7597ba8"
+            ]
+        ]
+    },
+    {
+        "id": "67bc6ac5e7597ba8",
+        "type": "ui_gauge",
+        "z": "2ffed68a136fdf8b",
+        "name": "",
+        "group": "d11924b3f0bb0624",
+        "order": 2,
+        "width": 4,
+        "height": 3,
+        "gtype": "gage",
+        "title": "HoldingRegister Read",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "20",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 520,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "eaa5e26a85cde7a5",
+        "type": "modbus-read",
+        "z": "2ffed68a136fdf8b",
+        "name": "",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "InputRegister",
+        "adr": "30",
+        "quantity": "1",
+        "rate": "2",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "enableDeformedMessages": false,
+        "startDelayTime": "",
+        "server": "c67705d38fddf91e",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 110,
+        "y": 500,
+        "wires": [
+            [
+                "88b614dab5fac01a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "88b614dab5fac01a",
+        "type": "ui_gauge",
+        "z": "2ffed68a136fdf8b",
+        "name": "",
+        "group": "ae762ed680a9c9e9",
+        "order": 1,
+        "width": 4,
+        "height": 3,
+        "gtype": "gage",
+        "title": "InputRegister Read",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "20",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 370,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "2951c3d21889fbd4",
+        "type": "modbus-flex-connector",
+        "z": "2ffed68a136fdf8b",
+        "name": "",
+        "maxReconnectsPerMinute": 4,
+        "emptyQueue": false,
+        "showStatusActivities": false,
+        "showErrors": false,
+        "server": "c67705d38fddf91e",
+        "emptyMsgOnFail": false,
+        "configMsgOnChange": false,
+        "x": 870,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "01ce07d0f3a31c3c",
+        "type": "function",
+        "z": "2ffed68a136fdf8b",
+        "name": "Set IP",
+        "func": "// msg.payload contiene l'IP inserito in dashboard, es. \"192.168.0.123\"\nconst ip = msg.payload;\n\nmsg.payload = {\n    connectorType: 'TCP',\n    tcpHost: ip,\n    tcpPort: '502',\n    unitId: 1\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 520,
+        "wires": [
+            [
+                "2951c3d21889fbd4"
+            ]
+        ]
+    },
+    {
+        "id": "50edc39b09cabdff",
+        "type": "ui_text_input",
+        "z": "2ffed68a136fdf8b",
+        "name": "",
+        "label": "Set Server IP",
+        "tooltip": "",
+        "group": "17935888dd8a9235",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 690,
+        "y": 460,
+        "wires": [
+            [
+                "01ce07d0f3a31c3c"
+            ]
+        ]
+    },
+    {
+        "id": "bf5560b0d30027c2",
+        "type": "ui_spacer",
+        "z": "2ffed68a136fdf8b",
+        "name": "spacer",
+        "group": "d11924b3f0bb0624",
+        "order": 3,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "a1118fd1b905d11f",
+        "type": "ui_spacer",
+        "z": "2ffed68a136fdf8b",
+        "name": "spacer",
+        "group": "d11924b3f0bb0624",
+        "order": 4,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "eb62ba94fe504974",
+        "type": "ui_spacer",
+        "z": "2ffed68a136fdf8b",
+        "name": "spacer",
+        "group": "d11924b3f0bb0624",
+        "order": 5,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "dd35b11437e511d6",
+        "type": "ui_spacer",
+        "z": "2ffed68a136fdf8b",
+        "name": "spacer",
+        "group": "ae762ed680a9c9e9",
+        "order": 2,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "b93b56847fc0a72a",
+        "type": "ui_spacer",
+        "z": "2ffed68a136fdf8b",
+        "name": "spacer",
+        "group": "ae762ed680a9c9e9",
+        "order": 3,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "990f0123869c8a07",
+        "type": "ui_spacer",
+        "z": "2ffed68a136fdf8b",
+        "name": "spacer",
+        "group": "ae762ed680a9c9e9",
+        "order": 4,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "c67705d38fddf91e",
+        "type": "modbus-client",
+        "name": "",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "192.168.0.2",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": 9600,
+        "serialDatabits": 8,
+        "serialStopbits": 1,
+        "serialParity": "none",
+        "serialConnectionDelay": 100,
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "1a70e982ecbca912",
+        "type": "ui_group",
+        "name": "Coil Test",
+        "tab": "d836e4d1341f55be",
+        "order": 2,
+        "disp": true,
+        "width": "5",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d11924b3f0bb0624",
+        "type": "ui_group",
+        "name": "HoldingRegister Test",
+        "tab": "d836e4d1341f55be",
+        "order": 4,
+        "disp": true,
+        "width": "5",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "01448598ec2b4042",
+        "type": "ui_group",
+        "name": "DiscreteInput Test",
+        "tab": "d836e4d1341f55be",
+        "order": 3,
+        "disp": true,
+        "width": "5",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ae762ed680a9c9e9",
+        "type": "ui_group",
+        "name": "InputRegister Test",
+        "tab": "d836e4d1341f55be",
+        "order": 5,
+        "disp": true,
+        "width": "5",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "17935888dd8a9235",
+        "type": "ui_group",
+        "name": "Configuration",
+        "tab": "d836e4d1341f55be",
+        "order": 5,
+        "disp": true,
+        "width": "5",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d836e4d1341f55be",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]

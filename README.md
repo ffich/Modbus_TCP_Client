@@ -1,8 +1,9 @@
 # Modbus_TCP_Client
 This repository contains a Modbus TCP Client control panel built with Node-RED, designed for experimenting, debugging, and learning Modbus communication.
 The flow provides an interactive dashboard capable of reading and writing Modbus Coils, Discrete Inputs, Holding Registers, and Input Registers.
-
 It is ideal for testing devices, lab experiments, automation demos, and industrial prototyping.
+
+A dedicated Modbus TCP server for Arduino Opta is also available and was used to test the dashboard, making this project a complete Modbus testing environment (client + embedded server).
 
 🚀 Features
 
@@ -40,6 +41,18 @@ It is ideal for testing devices, lab experiments, automation demos, and industri
 
 🧪 Optional Modbus Server Simulator
 The flow includes a disabled Modbus Server node that can act as a local simulator for testing without physical hardware.
+
+🔌 Arduino Opta as Modbus TCP Server
+
+This dashboard can be tested using a custom Modbus TCP server implementation running on Arduino Opta.
+The Opta exposes coils and registers mapped exactly for this client flow, allowing you to:
+- simulate real industrial I/O,
+- test Modbus reads/writes end-to-end,
+- validate timing and communication reliability,
+- use Opta as an embedded PLC-class Modbus server.
+
+This makes the project a complete setup:
+Node-RED Modbus Client ↔ Arduino Opta Modbus Server
 
 🖥️ Dashboard Layout
 

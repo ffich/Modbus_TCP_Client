@@ -44,7 +44,7 @@ The flow includes a disabled Modbus Server node that can act as a local simulato
 
 🔌 **Arduino Opta as Modbus TCP Server**
 
-<img width="1500" height="1500" alt="image" src="https://github.com/user-attachments/assets/84615eb3-92fb-47d5-af66-aca46672a5a7" />
+<img width="750" height="750" alt="image" src="https://github.com/user-attachments/assets/84615eb3-92fb-47d5-af66-aca46672a5a7" />
 
 This dashboard can be tested using a custom Modbus TCP server implementation running on Arduino Opta.
 The Opta exposes coils and registers mapped exactly for this client flow, allowing you to:
